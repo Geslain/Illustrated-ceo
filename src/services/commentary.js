@@ -1,7 +1,16 @@
-const commentaries= []
+const commentaries= [
+    {
+        id: 1,
+        text: "Great job"
+    },
+    {
+        id: 2,
+        text: "Omg nice !"
+    }
+]
 
 const commentaryService = {
-    getCommentaries() {
+    getCommentaryList() {
         return commentaries
     }
 }
