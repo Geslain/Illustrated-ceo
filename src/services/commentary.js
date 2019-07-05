@@ -1,3 +1,4 @@
+// Mocked data
 const commentaries= [
     {
         id: 1,
@@ -13,6 +14,7 @@ const commentaries= [
     }
 ]
 
+// Fake Api service
 const commentaryService = {
     getCommentaryList() {
         return commentaries
