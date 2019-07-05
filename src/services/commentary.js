@@ -1,11 +1,15 @@
 const commentaries= [
     {
         id: 1,
-        text: "Great job"
+        author: "Ben",
+        text: "Great job",
+        date: new Date().toDateString()
     },
     {
         id: 2,
-        text: "Omg nice !"
+        author: "Glen",
+        text: "Omg nice !",
+        date: new Date().toDateString()
     }
 ]
 
