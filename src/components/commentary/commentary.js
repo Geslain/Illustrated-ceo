@@ -3,18 +3,7 @@ import {objectOf, string} from "prop-types";
 import {Paper, withStyles} from "@material-ui/core";
 import styles from "./styles";
 import Transition from "react-transition-group/Transition";
-
-
-const duration = 1000;
-
-const defaultStyle = {
-    transition: `opacity ${duration}ms ease-in-out`,
-    opacity: 0,
-}
-
-const transitionStyles = {
-    entered:  { opacity: 1 },
-};
+import Typography from "@material-ui/core/Typography";
 
 /**
  *
@@ -26,6 +15,15 @@ const transitionStyles = {
  * @constructor
  */
 function Commentary({text, author, date, classes}) {
+    const defaultStyle = {
+        transition: `opacity 1000ms ease-in-out`,
+        opacity: 0,
+    }
+
+    const transitionStyles = {
+        entered:  { opacity: 1 },
+    };
+
     return (<Transition appear in={true} timeout={0}>
         {state => {
             return (
@@ -34,7 +32,7 @@ function Commentary({text, author, date, classes}) {
                 ...transitionStyles[state]
             }}>
                 <Paper className={classes.commentary}>
-                    {author} ({date}): {text}
+                    {author} (<Typography variant={"caption"}>{date}</Typography>): {text}
                 </Paper>
             </div>
         )}}
