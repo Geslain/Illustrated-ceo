@@ -1,5 +1,5 @@
 // Mocked data
-const commentaries= [
+let commentaries= [
     {
         id: 1,
         author: "Ben",
@@ -14,10 +14,27 @@ const commentaries= [
     }
 ]
 
-// Fake Api service
+/**
+ * Commentary service, faking rest api calls
+ *
+ * @type {{addCommentary(*=): (*|undefined), getCommentaryList(): *}}
+ */
 const commentaryService = {
     getCommentaryList() {
-        return commentaries
+        // As we use a variable as memory, it's important to return a new object(to simulate api response)
+        // So there's no risk variable reference is stored
+        return [...commentaries]
+    },
+    addCommentary(commentary) {
+        try {
+            commentary.id = commentaries.length + 1
+            commentaries.push(commentary)
+            return new Promise((res) =>{
+                res(commentary)
+            })
+        } catch (e) {
+            throw e
+        }
     }
 }
 
