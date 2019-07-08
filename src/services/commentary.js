@@ -1,16 +1,24 @@
+function getCurrentDateTime() { return `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`}
+
 // Mocked data
 let commentaries= [
     {
         id: 1,
         author: "Ben",
         text: "Great job",
-        date: new Date().toDateString()
+        date: getCurrentDateTime()
     },
     {
         id: 2,
         author: "Glen",
         text: "Omg nice !",
-        date: new Date().toDateString()
+        date: getCurrentDateTime()
+    },
+    {
+        id: 3,
+        author: "Logan",
+        text: "Anagrams are the best!",
+        date: getCurrentDateTime()
     },
     {
         id: 3,
@@ -34,6 +42,7 @@ const commentaryService = {
     addCommentary(commentary) {
         try {
             commentary.id = commentaries.length + 1
+            commentary.date = getCurrentDateTime()
             commentaries.push(commentary)
             return new Promise((res) =>{
                 res(commentary)
