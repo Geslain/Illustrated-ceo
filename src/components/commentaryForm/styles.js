@@ -5,7 +5,7 @@ export default () => ({
     textField: {
         margin: "10px 10px 30px 0",
     },
-    paper: {
+    form: {
         padding: 10,
         display: "flex",
         flexDirection: "column"

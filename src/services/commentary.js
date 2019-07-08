@@ -11,6 +11,12 @@ let commentaries= [
         author: "Glen",
         text: "Omg nice !",
         date: new Date().toDateString()
+    },
+    {
+        id: 3,
+        author: "Logan",
+        text: "Anagrams are the best!",
+        date: new Date().toDateString()
     }
 ]
 

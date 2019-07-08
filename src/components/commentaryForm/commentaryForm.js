@@ -31,7 +31,7 @@ function CommentaryForm({classes, onSubmit}) {
                 error={Boolean(errors.text)}
                 inputRef={register({required: true})}
             />
-            <Button type="submit" href={"#"} color="primary" variant="contained">Send</Button>
+            <Button type="submit" color="primary" variant="contained">Send</Button>
         </form>
     )
 }

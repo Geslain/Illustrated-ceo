@@ -2,9 +2,12 @@ import React, {useEffect, useState} from 'react';
 import Commentary from "../commentary/commentary";
 import commentaryService from "../../services/commentary"
 import CommentaryForm from "../commentaryForm/commentaryForm";
-import {Paper} from "@material-ui/core";
+import {Paper, withStyles} from "@material-ui/core";
+import styles from "./styles";
+import {objectOf, string} from "prop-types";
+import Typography from "@material-ui/core/Typography";
 
-function CommentaryPage() {
+function CommentaryPage({classes}) {
     const [commentaryList, setCommentaryList] = useState([])
 
     useEffect(() => {
@@ -31,13 +34,18 @@ function CommentaryPage() {
      * @returns {*}
      */
     const renderCommentaryList = (commentaryList) =>
-        commentaryList.map(commentary =>{
+        commentaryList.map(commentary => {
             return <Commentary {...commentary} key={commentary.id}/>
         })
 
     return (
         <div>
-            {renderCommentaryList(commentaryList)}
+            <Typography variant="h2" align="center">
+                Illus<span className={classes.clue}>t</span>r<span className={classes.clue}>at</span>ed
+                <span className={classes.clue}>C</span>EO</Typography>
+            <div className={classes.commentaryList}>
+                {renderCommentaryList(commentaryList)}
+            </div>
             <Paper>
                 <CommentaryForm onSubmit={handleCommentaryFormSubmit}/>
             </Paper>
@@ -45,4 +53,8 @@ function CommentaryPage() {
     );
 }
 
-export default CommentaryPage;
+CommentaryPage.propTypes = {
+    classes: objectOf(string)
+}
+
+export default withStyles(styles)(CommentaryPage);
