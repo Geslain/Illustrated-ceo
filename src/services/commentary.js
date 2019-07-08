@@ -4,27 +4,21 @@ function getCurrentDateTime() { return `${new Date().toLocaleDateString()} ${new
 let commentaries= [
     {
         id: 1,
-        author: "Ben",
+        author: "le_de_",
         text: "Great job",
         date: getCurrentDateTime()
     },
     {
         id: 2,
-        author: "Glen",
-        text: "Omg nice !",
-        date: getCurrentDateTime()
+        author: "Louis R",
+        text: "Do you guys speak French ?",
+        date: "01/01/1970 00:00:00"
     },
     {
         id: 3,
         author: "Logan",
         text: "Anagrams are the best!",
         date: getCurrentDateTime()
-    },
-    {
-        id: 3,
-        author: "Logan",
-        text: "Anagrams are the best!",
-        date: new Date().toDateString()
     }
 ]
 
